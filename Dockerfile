@@ -2,7 +2,7 @@ FROM alpine:edge
 
 MAINTAINER docker@stefan-van-essen.nl
 
-ENV LANG='en_US.UTF-8' LANGUAGE='en_US.UTF-8' TERM='xterm' DOCKER_HOST=docker
+ENV LANG='en_US.UTF-8' LANGUAGE='en_US.UTF-8' TERM='xterm' DOCKER_HOST='docker'
 
 RUN apk -U --no-cache add \
     curl \
