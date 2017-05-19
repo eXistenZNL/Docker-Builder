@@ -9,6 +9,7 @@ RUN apk -U --no-cache add \
     git \
     docker \
     make \
+    automake \
     nodejs-current-npm \
     php7 \
     php7-ctype \
@@ -25,7 +26,19 @@ RUN apk -U --no-cache add \
     php7-simplexml \
     php7-zip \
     php7-zlib \
-    && curl --silent --show-error https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer \
-    && npm install -g yarn
+    alpine-sdk \
+    nasm \
+    autoconf \
+    build-base \
+    zlib \
+    zlib-dev \
+    libpng \
+    libpng-dev \
+    libwebp \
+    libwebp-dev \
+    libjpeg-turbo \
+    libjpeg-turbo-dev \
+  && curl --silent --show-error https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer \
+  && npm install -g yarn
 
 COPY cache-tool.sh /usr/local/bin/cache-tool
