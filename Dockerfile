@@ -5,11 +5,21 @@ MAINTAINER docker@stefan-van-essen.nl
 ENV LANG='en_US.UTF-8' LANGUAGE='en_US.UTF-8' TERM='xterm' DOCKER_HOST='docker'
 
 RUN apk -U --no-cache add \
-    curl \
-    git \
-    docker \
-    make \
+    alpine-sdk \
+    autoconf \
     automake \
+    build-base \
+    curl \
+    docker \
+    git \
+    libjpeg-turbo \
+    libjpeg-turbo-dev \
+    libpng \
+    libpng-dev \
+    libwebp \
+    libwebp-dev \
+    make \
+    nasm \
     nodejs-current-npm \
     php7 \
     php7-ctype \
@@ -21,24 +31,12 @@ RUN apk -U --no-cache add \
     php7-pdo_pgsql \
     php7-pdo_sqlite \
     php7-phar \
-    php7-tokenizer \
     php7-session \
     php7-simplexml \
+    php7-tokenizer \
     php7-zip \
     php7-zlib \
-    alpine-sdk \
-    nasm \
-    autoconf \
-    build-base \
-    zlib \
-    zlib-dev \
-    libpng \
-    libpng-dev \
-    libwebp \
-    libwebp-dev \
-    libjpeg-turbo \
-    libjpeg-turbo-dev \
-  && curl --silent --show-error https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer \
-  && npm install -g yarn
+    && curl --silent --show-error https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer \
+    && npm install -g yarn
 
 COPY cache-tool.sh /usr/local/bin/cache-tool

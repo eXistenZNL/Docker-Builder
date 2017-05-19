@@ -17,11 +17,6 @@ function usage() {
     exit 1
 }
 
-function getCachePaths() {
-    IFS=:
-    set $1
-}
-
 function collectCache() {
     IFS=:
     set $1
@@ -38,8 +33,8 @@ function extractCache() {
     IFS=:
     set $1
     eval dir=$2
-    if [ ! -d $1 ]; then
-        echo "  ! Cache directory $1 does not exist, skipping..."
+    if [ ! -d .cache/$1 ]; then
+        echo "  ! Cache directory .cache/$1 does not exist, skipping..."
         return
     fi
     echo "  - Extracting .cache/$1 into $2...";
@@ -47,13 +42,13 @@ function extractCache() {
     cp -R .cache/$1 $dir
 }
 
-# ==== Start of the program7
+# ==== Start of the program
 
 if [ $# -lt 2 ]; then
     usage;
 fi
 
-if [[ "$1" -ne "collect" && "$1" -ne "extract" ]]; then
+if [[ "$1" != "collect" && "$1" != "extract" ]]; then
     usage;
 fi
 
