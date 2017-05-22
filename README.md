@@ -95,7 +95,7 @@ Some directories that you probably want to cache if you use the tools:
 | NPM      | ~/.npm                       |
 | Yarn     | /usr/local/share/.cache/yarn |
 
-## An example that shows the improved readibility
+## An example that shows the improved readability
 
 Because we don't need to pull in any extra's we don't have to clutter our build script with curl commands, prefetchers,
 or other exotic script. We can instead simply add the commands just as they would normally run, this makes our
@@ -127,14 +127,14 @@ build container:
   image: existenz/builder:latest
   stage: buildContainer
   before_script:
-    - cache-tool extract yarn:/usr/local/share/.cache/yarn/v1 composer:~/.composer
+    - cache-tool extract yarn:/usr/local/share/.cache/yarn composer:~/.composer
   script:
     - composer install --ignore-platform-reqs --no-dev
     - yarn install
     - yarn run production
     - docker build
   after_script:
-    - cache-tool collect yarn:/usr/local/share/.cache/yarn/v1 composer:~/.composer
+    - cache-tool collect yarn:/usr/local/share/.cache/yarn composer:~/.composer
 ```
 
 ## Bugs, questions, and improvements

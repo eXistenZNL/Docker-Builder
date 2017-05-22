@@ -34,9 +34,9 @@ RUN apk -U --no-cache add \
     php7-session \
     php7-simplexml \
     php7-tokenizer \
+    php7-xdebug \
     php7-zip \
     php7-zlib \
-    php7-xdebug \
     && curl --silent --show-error https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer \
     && npm install -g yarn
 
