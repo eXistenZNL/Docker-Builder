@@ -1,4 +1,4 @@
-FROM alpine:edge
+FROM alpine:3.6
 
 MAINTAINER docker@stefan-van-essen.nl
 
@@ -20,13 +20,13 @@ RUN apk -U --no-cache add \
     libwebp-dev \
     make \
     nasm \
-    nodejs-current-npm \
+    nodejs-npm \
     php7 \
     php7-ctype \
     php7-dom \
     php7-iconv \
     php7-json \
-    php7-ldap \    
+    php7-ldap \
     php7-mbstring \
     php7-mcrypt \
     php7-pdo_mysql \
