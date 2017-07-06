@@ -45,8 +45,9 @@ RUN apk -U --no-cache add \
     php7-snmp \
     php7-tokenizer \
     php7-xdebug \
-    php7-xmlwriter \
+    php7-xml \
     php7-xmlreader \
+    php7-xmlwriter \
     php7-zip \
     php7-zlib \
     && curl --silent --show-error https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer \
