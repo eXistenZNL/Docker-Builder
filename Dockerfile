@@ -21,6 +21,7 @@ RUN apk -U --no-cache add \
     make \
     nasm \
     nodejs-npm \
+    openssh \
     php7 \
     php7-ctype \
     php7-curl \
