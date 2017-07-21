@@ -52,6 +52,7 @@ RUN apk -U --no-cache add \
     php7-zip \
     php7-zlib \
     && curl --silent --show-error https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer \
-    && npm install -g yarn
+    && npm install -g yarn \
+    && sed -i 's/;zend/zend/g' /etc/php7/conf.d/xdebug.ini
 
 COPY cache-tool.sh /usr/local/bin/cache-tool
