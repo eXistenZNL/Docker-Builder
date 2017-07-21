@@ -52,6 +52,12 @@ RUN apk -U --no-cache add \
     php7-zip \
     php7-zlib \
     && curl --silent --show-error https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer \
-    && npm install -g yarn
+    && npm install -g yarn \
+    && echo "zend_extension=/usr/lib/php7/modules/xdebug.so" >> /etc/php7/php.ini \
+    && echo "xdebug.remote_enable=on" >> /etc/php7/php.ini \
+    && echo "xdebug.remote_handler=dbgp" >> /etc/php7/php.ini \
+    && echo "xdebug.remote_connect_back=1" >> /etc/php7/php.ini \
+    && echo "xdebug.remote_autostart=on" >> /etc/php7/php.ini \
+    && echo "xdebug.remote_port=9004" >> /etc/php7/php.ini
 
 COPY cache-tool.sh /usr/local/bin/cache-tool
