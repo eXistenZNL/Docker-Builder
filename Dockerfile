@@ -11,6 +11,7 @@ RUN apk -U --no-cache add \
     build-base \
     curl \
     docker \
+    g++ \
     git \
     libjpeg-turbo \
     libjpeg-turbo-dev \
@@ -35,6 +36,7 @@ RUN apk -U --no-cache add \
     php7-ldap \
     php7-mbstring \
     php7-mcrypt \
+    php7-pear \
     php7-pcntl \
     php7-pdo_mysql \
     php7-pdo_pgsql \
