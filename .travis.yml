@@ -1,0 +1,19 @@
+matrix:
+  include:
+    - env: PHP_VERSION=5.6
+    - env: PHP_VERSION=7.1
+
+services:
+  - docker
+
+script:
+  - make build TAGNAME=$(printenv PHP_VERSION)
+  - make run TAGNAME=$(printenv PHP_VERSION)
+  - make test TAGNAME=$(printenv PHP_VERSION)
+  - make stop
+
+after_success:
+  - if [[ "$TRAVIS_PULL_REQUEST" == "false" && "$TRAVIS_BRANCH" == "master" ]]; then
+    docker login -u="existenz" -p="$DOCKER_PASSWORD";
+    docker push existenz/builder;
+    fi
