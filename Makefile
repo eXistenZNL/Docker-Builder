@@ -3,7 +3,7 @@
 # Variables
 PROJECTNAME=existenz/builder
 TAGNAME=UNDEF
-LATEST_TAG=7.1
+LATEST_TAG=7.2
 
 build:
 	if [ "$(TAGNAME)" = "UNDEF" ]; then echo "please provide a valid TAGNAME" && exit 1; fi
