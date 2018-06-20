@@ -9,9 +9,11 @@ RUN apk -U --no-cache add \
     autoconf \
     automake \
     build-base \
+    bash \
     curl \
     docker \
     git \
+    g++ \
     libjpeg-turbo \
     libjpeg-turbo-dev \
     libpng \
@@ -46,6 +48,7 @@ RUN apk -U --no-cache add \
     php5-xmlreader \
     php5-zip \
     php5-zlib \
+    zlib-dev \
     && curl --silent --show-error https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer \
     && npm install -g yarn \
     && sed -i 's/;zend/zend/g' /etc/php5/conf.d/xdebug.ini
