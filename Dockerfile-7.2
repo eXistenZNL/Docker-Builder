@@ -13,9 +13,11 @@ RUN apk -U --no-cache add \
     autoconf \
     automake \
     build-base \
+    bash \
     curl \
     docker \
     git \
+    g++ \
     libjpeg-turbo \
     libjpeg-turbo-dev \
     libpng \
@@ -52,6 +54,7 @@ RUN apk -U --no-cache add \
     php7-xmlreader@php \
     php7-zip@php \
     php7-zlib@php \
+    zlib-dev \
     && ln -s /usr/bin/php7 /usr/bin/php \
     && curl --silent --show-error https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer \
     && npm install -g yarn
