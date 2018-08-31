@@ -1,12 +1,8 @@
-FROM alpine:3.7
+FROM alpine:3.8
 
 MAINTAINER docker@stefan-van-essen.nl
 
 ENV LANG='en_US.UTF-8' LANGUAGE='en_US.UTF-8' TERM='xterm' DOCKER_HOST='docker'
-
-ADD https://php.codecasts.rocks/php-alpine.rsa.pub /etc/apk/keys/php-alpine.rsa.pub
-RUN apk --update add ca-certificates
-RUN echo "@php https://php.codecasts.rocks/v3.7/php-7.2" >> /etc/apk/repositories
 
 RUN apk -U --no-cache add \
     alpine-sdk \
@@ -30,35 +26,34 @@ RUN apk -U --no-cache add \
     nodejs \
     nodejs-npm \
     openssh \
-    php7@php \
-    php7-ctype@php \
-    php7-curl@php \
-    php7-dom@php \
-    php7-gettext@php \
-    php7-gd@php \
-    php7-gmp@php \
-    php7-iconv@php \
-    php7-intl@php \
-    php7-json@php \
-    php7-ldap@php \
-    php7-mbstring@php \
-    php7-openssl@php \
-    php7-pcntl@php \
-    php7-pdo_mysql@php \
-    php7-pdo_pgsql@php \
-    php7-pdo_sqlite@php \
-    php7-phar@php \
-    php7-posix@php \
-    php7-redis@php \
-    php7-session@php \
-    php7-snmp@php \
-    php7-xdebug@php \
-    php7-xml@php \
-    php7-xmlreader@php \
-    php7-zip@php \
-    php7-zlib@php \
+    php7 \
+    php7-ctype \
+    php7-curl \
+    php7-dom \
+    php7-gettext \
+    php7-gd \
+    php7-gmp \
+    php7-iconv \
+    php7-intl \
+    php7-json \
+    php7-ldap \
+    php7-mbstring \
+    php7-openssl \
+    php7-pcntl \
+    php7-pdo_mysql \
+    php7-pdo_pgsql \
+    php7-pdo_sqlite \
+    php7-phar \
+    php7-posix \
+    php7-redis \
+    php7-session \
+    php7-snmp \
+    php7-xdebug \
+    php7-xml \
+    php7-xmlreader \
+    php7-zip \
+    php7-zlib \
     zlib-dev \
-    && ln -s /usr/bin/php7 /usr/bin/php \
     && curl --silent --show-error https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer \
     && npm install -g yarn
 
