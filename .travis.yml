@@ -9,9 +9,9 @@ services:
   - docker
 
 script:
-  - make build TAGNAME=$(printenv PHP_VERSION)
-  - make run TAGNAME=$(printenv PHP_VERSION)
-  - make test TAGNAME=$(printenv PHP_VERSION)
+  - make build TAG=$(printenv PHP_VERSION)
+  - make run TAG=$(printenv PHP_VERSION)
+  - make test TAG=$(printenv PHP_VERSION)
   - make stop
 
 after_success:
