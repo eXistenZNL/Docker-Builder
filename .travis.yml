@@ -23,7 +23,7 @@ after_success:
 notifications:
   webhooks:
     urls:
-      - https://$HOOKR_AUTH@hookr.enrise.com/webhooks-proxy/travis
+      - secure: "bFVv+aNC858/jrTs9xjHCcreT2idDnOa7WnsY3uQmYiGiz5kMjVMNnVelV0xEHNfqoqeHmWbKruPZrjYt1/2O0diTmoAuhAtGXKfkicLcEB+pODXOdFWCuNkzX5gv8Q0Qt9L44ycD4iGaP+UxJweBLbpKKdZDR+nwBWDDHuTqR/QVi0P/jEeRluRE1HRViZI/Lcjxil+C4FJsc5/OXALlVB7lESV9//mKxghg3nCjGivXISCaE5wzkHtzMdE3xOnW5aVhKoQKyxkbA4P7aMtCtlb8gx0tbBJc2smf4NMKVDhT0hqBdSqow9rY5ULlzV91S0Wh7r4cVULsdaWqn7mbO2cZ1fCf2tsEFsnpxdJazjIL2kxv/636dKKpfcZIKIaS9DNxSyZhB7Z2c+L7bWn/J1yqxiAFDouk6sP9NioV8zfWqZS3jmP621RRCQzRafq3gznrbzFHICaI7PKzDOMZNNW6buyWtgPMkxHtsU/Wmhfe5TMes86KCGQr0R0wvZkQMVakRFPml0bDMqOhwZcqYzQszJki0S5F9a58fa7Hv5FNSeXwJR89hlx3EMO4ueInAHAg0jyKq8r/JOwy7tRAOKJHtrs2YuJ9iX86QWNvQ18Bv8eJRwFGkYFm5J8tqPM5Xi5pgnIcaf7/LORMrKWYP/aQBVQgW03dN22jfj7Snw="
     on_success: always
     on_failure: always
     on_start: always
