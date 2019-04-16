@@ -68,5 +68,5 @@ COPY cache-tool.sh /usr/local/bin/cache-tool
 
 # Temporary workaround for problems with php-iconv on Alpine based PHP images
 # See https://github.com/docker-library/php/issues/240 for more info
-RUN apk add gnu-libiconv --no-cache --repository http://dl-cdn.alpinelinux.org/alpine/edge/testing/
+RUN apk add gnu-libiconv --no-cache --repository http://dl-cdn.alpinelinux.org/alpine/edge/community/
 ENV LD_PRELOAD='/usr/lib/preloadable_libiconv.so php'
