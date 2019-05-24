@@ -4,6 +4,7 @@ matrix:
     - env: PHP_VERSION=7.0
     - env: PHP_VERSION=7.1
     - env: PHP_VERSION=7.2
+    - env: PHP_VERSION=7.3
 
 services:
   - docker

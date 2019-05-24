@@ -3,7 +3,7 @@
 # Variables
 PROJECTNAME=existenz/builder
 TAG=UNDEF
-LATEST_TAG=7.2
+LATEST_TAG=7.3
 
 build:
 	if [ "$(TAG)" = "UNDEF" ]; then echo "please provide a valid TAG" && exit 1; fi
@@ -20,7 +20,8 @@ stop:
 
 clean:
 	if [ "$(TAG)" = "UNDEF" ]; then echo "please provide a valid TAG" && exit 1; fi
-	docker rmi $(PROJECTNAME):$(TAG)
+	docker rmi $(PROJECTNAME):$(TAG) || true
+	docker rmi $(PROJECTNAME):latest || true
 
 test:
 	if [ "$(TAG)" = "UNDEF" ]; then echo "please provide a valid TAG" && exit 1; fi
