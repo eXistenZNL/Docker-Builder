@@ -1,14 +1,10 @@
-FROM alpine:3.9
+FROM alpine:3.10
 
 MAINTAINER docker@stefan-van-essen.nl
 
 ENV LANG='en_US.UTF-8' LANGUAGE='en_US.UTF-8' TERM='xterm'
 
-ADD https://dl.bintray.com/php-alpine/key/php-alpine.rsa.pub /etc/apk/keys/php-alpine.rsa.pub
-
-RUN apk --update add ca-certificates \
-    && echo "https://dl.bintray.com/php-alpine/v3.9/php-7.3" >> /etc/apk/repositories \
-    && apk -U --no-cache add \
+RUN apk -U --no-cache add \
     alpine-sdk \
     autoconf \
     automake \
@@ -31,39 +27,39 @@ RUN apk --update add ca-certificates \
     nodejs-npm \
     openssh \
     php \
-    php-ctype \
-    php-curl \
-    php-dom \
-    php-gettext \
-    php-gd \
-    php-gmp \
-    php-iconv \
-    php-json \
-    php-ldap \
-    php-mbstring \
-    php-openssl \
-    php-pcntl \
-    php-pdo_mysql \
-    php-pdo_pgsql \
-    php-pdo_sqlite \
-    php-phar \
-    php-posix \
-    php-redis \
-    php-session \
-    php-soap \
-    php-xdebug \
-    php-xml \
-    php-xmlreader \
-    php-zip \
-    php-zlib \
+    php7-ctype \
+    php7-curl \
+    php7-dom \
+    php7-gettext \
+    php7-gd \
+    php7-gmp \
+    php7-iconv \
+    php7-json \
+    php7-ldap \
+    php7-mbstring \
+    php7-openssl \
+    php7-pecl-xdebug \
+    php7-pcntl \
+    php7-pdo_mysql \
+    php7-pdo_pgsql \
+    php7-pdo_sqlite \
+    php7-phar \
+    php7-posix \
+    php7-redis \
+    php7-session \
+    php7-soap \
+    php7-xml \
+    php7-xmlreader \
+    php7-zip \
+    php7-zlib \
     zlib-dev \
-    && ln -s /usr/bin/php7 /usr/bin/php \
     && curl --silent --show-error https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer \
-    && npm install -g yarn
+    && npm install -g yarn \
+    && sed -i 's/;zend/zend/g' /etc/php7/conf.d/xdebug.ini
 
 COPY cache-tool.sh /usr/local/bin/cache-tool
 
-# Temporary workaround for problems with php-iconv on Alpine based PHP images
+# Temporary workaround for problems with php7-iconv on Alpine based PHP images
 # See https://github.com/docker-library/php/issues/240 for more info
 RUN apk add gnu-libiconv --no-cache --repository http://dl-cdn.alpinelinux.org/alpine/edge/community/
 ENV LD_PRELOAD='/usr/lib/preloadable_libiconv.so php'
