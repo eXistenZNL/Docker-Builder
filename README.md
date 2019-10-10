@@ -147,13 +147,13 @@ This container is available in different versions, see below what's in each vers
 
 Click any version to see what specific version is currently available, but keep in mind that this might differ slightly from the moment these containers were built.
 
-| Container version | PHP                                                                    | NodeJS                                                             | Yarn                                          | Composer                                  |
-| ------------------|------------------------------------------------------------------------|--------------------------------------------------------------------|-----------------------------------------------|-------------------------------------------|
-| 5.6               | [5.6](https://pkgs.alpinelinux.org/package/v3.5/main/x86_64/php5)      | [6](https://pkgs.alpinelinux.org/package/v3.5/main/x86_64/nodejs)  | [Latest stable](https://yarnpkg.com/lang/en/) | [Latest stable](https://getcomposer.org/) |
-| 7.0               | [7.0](https://pkgs.alpinelinux.org/package/v3.5/community/x86_64/php7) | [6](https://pkgs.alpinelinux.org/package/v3.5/main/x86_64/nodejs)  | [Latest stable](https://yarnpkg.com/lang/en/) | [Latest stable](https://getcomposer.org/) |
-| 7.1               | [7.1](https://pkgs.alpinelinux.org/package/v3.6/community/x86_64/php7) | [6](https://pkgs.alpinelinux.org/package/v3.6/main/x86_64/nodejs)  | [Latest stable](https://yarnpkg.com/lang/en/) | [Latest stable](https://getcomposer.org/) |
-| 7.2               | [7.2](https://pkgs.alpinelinux.org/package/v3.8/community/x86_64/php7) | [8](https://pkgs.alpinelinux.org/package/v3.8/main/x86_64/nodejs)  | [Latest stable](https://yarnpkg.com/lang/en/) | [Latest stable](https://getcomposer.org/) |
-| 7.3 (latest)      | [7.3](https://php.codecasts.rocks/v3.9/php-7.3/x86_64/)                | [10](https://pkgs.alpinelinux.org/package/v3.9/main/x86_64/nodejs) | [Latest stable](https://yarnpkg.com/lang/en/) | [Latest stable](https://getcomposer.org/) |
+| Container version | PHP                                                                     | NodeJS                                                             | Yarn                                          | Composer                                  |
+| ------------------|-------------------------------------------------------------------------|--------------------------------------------------------------------|-----------------------------------------------|-------------------------------------------|
+| 5.6               | [5.6](https://pkgs.alpinelinux.org/package/v3.5/main/x86_64/php5)       | [6](https://pkgs.alpinelinux.org/package/v3.5/main/x86_64/nodejs)  | [Latest stable](https://yarnpkg.com/lang/en/) | [Latest stable](https://getcomposer.org/) |
+| 7.0               | [7.0](https://pkgs.alpinelinux.org/package/v3.5/community/x86_64/php7)  | [6](https://pkgs.alpinelinux.org/package/v3.5/main/x86_64/nodejs)  | [Latest stable](https://yarnpkg.com/lang/en/) | [Latest stable](https://getcomposer.org/) |
+| 7.1               | [7.1](https://pkgs.alpinelinux.org/package/v3.6/community/x86_64/php7)  | [6](https://pkgs.alpinelinux.org/package/v3.6/main/x86_64/nodejs)  | [Latest stable](https://yarnpkg.com/lang/en/) | [Latest stable](https://getcomposer.org/) |
+| 7.2               | [7.2](https://pkgs.alpinelinux.org/package/v3.8/community/x86_64/php7)  | [8](https://pkgs.alpinelinux.org/package/v3.8/main/x86_64/nodejs)  | [Latest stable](https://yarnpkg.com/lang/en/) | [Latest stable](https://getcomposer.org/) |
+| 7.3 (latest)      | [7.3](https://pkgs.alpinelinux.org/package/v3.10/community/x86_64/php7) | [10](https://pkgs.alpinelinux.org/package/v3.9/main/x86_64/nodejs) | [Latest stable](https://yarnpkg.com/lang/en/) | [Latest stable](https://getcomposer.org/) |
 
 ## Bugs, questions, and improvements
 
