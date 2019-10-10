@@ -29,6 +29,7 @@ RUN apk -U --no-cache add \
     php7-ctype \
     php7-curl \
     php7-dom \
+    php7-ftp \
     php7-gettext \
     php7-gd \
     php7-gmp \
