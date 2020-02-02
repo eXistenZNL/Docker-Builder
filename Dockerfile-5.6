@@ -53,7 +53,7 @@ RUN apk -U --no-cache add \
     php5-zlib \
     zlib-dev \
     && curl --silent --show-error https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer \
-    && npm install -g yarn \
+    && npm install -g --unsafe-perm yarn \
     && sed -i 's/;zend/zend/g' /etc/php5/conf.d/xdebug.ini
 
 COPY cache-tool.sh /usr/local/bin/cache-tool
