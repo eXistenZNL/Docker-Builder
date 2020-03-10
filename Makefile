@@ -3,7 +3,8 @@
 # Variables
 PROJECTNAME=existenz/builder
 TAG=UNDEF
-LATEST_TAG=7.3
+PHP_VERSION=$(shell echo "$(TAG)" | sed -e 's/-codecasts//')
+LATEST_TAG=7.4-codecasts
 
 build:
 	if [ "$(TAG)" = "UNDEF" ]; then echo "please provide a valid TAG" && exit 1; fi
@@ -25,7 +26,7 @@ clean:
 
 test:
 	if [ "$(TAG)" = "UNDEF" ]; then echo "please provide a valid TAG" && exit 1; fi
-	docker exec -t existenz_builder_instance php --version | grep -q "PHP $(TAG)"
+	docker exec -t existenz_builder_instance php --version | grep -q "PHP $(PHP_VERSION)"
 	docker exec -t existenz_builder_instance php --version | grep -q "Xdebug"
 	docker exec -t existenz_builder_instance composer --version > /dev/null
 	docker exec -t existenz_builder_instance node --version > /dev/null
