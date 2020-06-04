@@ -4,7 +4,7 @@
 PROJECTNAME=existenz/builder
 TAG=UNDEF
 PHP_VERSION=$(shell echo "$(TAG)" | sed -e 's/-codecasts//')
-LATEST_TAG=7.4-codecasts
+LATEST_TAG=7.4
 
 build:
 	if [ "$(TAG)" = "UNDEF" ]; then echo "please provide a valid TAG" && exit 1; fi

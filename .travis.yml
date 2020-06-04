@@ -6,6 +6,7 @@ matrix:
     - env: PHP_VERSION=7.2
     - env: PHP_VERSION=7.3
     - env: PHP_VERSION=7.4-codecasts
+    - env: PHP_VERSION=7.4
 
 services:
   - docker

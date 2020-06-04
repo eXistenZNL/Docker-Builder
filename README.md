@@ -155,8 +155,9 @@ Also keep in mind that the Codecasts repo, whilst providing the latest versions 
 | 7.0                    | [7.0](https://pkgs.alpinelinux.org/package/v3.5/community/x86_64/php7)  | [6](https://pkgs.alpinelinux.org/package/v3.5/main/x86_64/nodejs)   | [Latest stable](https://yarnpkg.com/lang/en/) | [Latest stable](https://getcomposer.org/) |
 | 7.1                    | [7.1](https://pkgs.alpinelinux.org/package/v3.6/community/x86_64/php7)  | [6](https://pkgs.alpinelinux.org/package/v3.6/main/x86_64/nodejs)   | [Latest stable](https://yarnpkg.com/lang/en/) | [Latest stable](https://getcomposer.org/) |
 | 7.2                    | [7.2](https://pkgs.alpinelinux.org/package/v3.8/community/x86_64/php7)  | [8](https://pkgs.alpinelinux.org/package/v3.8/main/x86_64/nodejs)   | [Latest stable](https://yarnpkg.com/lang/en/) | [Latest stable](https://getcomposer.org/) |
-| 7.3 (latest)           | [7.3](https://pkgs.alpinelinux.org/package/v3.10/community/x86_64/php7) | [10](https://pkgs.alpinelinux.org/package/v3.10/main/x86_64/nodejs) | [Latest stable](https://yarnpkg.com/lang/en/) | [Latest stable](https://getcomposer.org/) |
-| 7.4-codecasts (latest) | [7.4](https://dl.bintray.com/php-alpine/v3.10/php-7.4/x86_64/)          | [10](https://pkgs.alpinelinux.org/package/v3.10/main/x86_64/nodejs) | [Latest stable](https://yarnpkg.com/lang/en/) | [Latest stable](https://getcomposer.org/) |
+| 7.3           | [7.3](https://pkgs.alpinelinux.org/package/v3.10/community/x86_64/php7) | [10](https://pkgs.alpinelinux.org/package/v3.10/main/x86_64/nodejs) | [Latest stable](https://yarnpkg.com/lang/en/) | [Latest stable](https://getcomposer.org/) |
+| 7.4-codecasts | [7.4](https://dl.bintray.com/php-alpine/v3.10/php-7.4/x86_64/)          | [10](https://pkgs.alpinelinux.org/package/v3.10/main/x86_64/nodejs) | [Latest stable](https://yarnpkg.com/lang/en/) | [Latest stable](https://getcomposer.org/) |
+| 7.4 (latest)           | [7.4](https://pkgs.alpinelinux.org/package/v3.12/community/x86_64/php7) | [12](https://pkgs.alpinelinux.org/package/v3.12/main/x86_64/nodejs) | [Latest stable](https://yarnpkg.com/lang/en/) | [Latest stable](https://getcomposer.org/) |
 
 ## Bugs, questions, and improvements
 
