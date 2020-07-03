@@ -13,7 +13,10 @@ build:
 
 run:
 	if [ "$(TAG)" = "UNDEF" ]; then echo "please provide a valid TAG" && exit 1; fi
-	docker run -ti -d --name existenz_builder_instance $(PROJECTNAME):$(TAG) watch date
+	docker run -ti -d \
+		-v $$(pwd)/tests:/tests \
+		--name existenz_builder_instance $(PROJECTNAME):$(TAG) \
+		watch date
 
 stop:
 	docker stop -t0 existenz_builder_instance
@@ -24,11 +27,17 @@ clean:
 	docker rmi $(PROJECTNAME):$(TAG) || true
 	docker rmi $(PROJECTNAME):latest || true
 
-test:
+test: test-install test-various
 	if [ "$(TAG)" = "UNDEF" ]; then echo "please provide a valid TAG" && exit 1; fi
+
+test-install:
 	docker exec -t existenz_builder_instance php --version | grep -q "PHP $(PHP_VERSION)"
 	docker exec -t existenz_builder_instance php --version | grep -q "Xdebug"
 	docker exec -t existenz_builder_instance composer --version > /dev/null
 	docker exec -t existenz_builder_instance node --version > /dev/null
 	docker exec -t existenz_builder_instance npm --version > /dev/null
 	docker exec -t existenz_builder_instance yarn --version > /dev/null
+
+test-various:
+	docker exec -t existenz_builder_instance php tests/iconv.php
+	docker exec -t existenz_builder_instance php -m | grep -q "zlib"
