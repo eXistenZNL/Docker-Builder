@@ -4,14 +4,14 @@
 PROJECTNAME=existenz/builder
 TAG=UNDEF
 PHP_VERSION=$(shell echo "$(TAG)" | sed -e 's/-codecasts//')
-LATEST_TAG=7.4-codecasts
+LATEST_TAG=8.0-codecasts
 
 build:
 	if [ "$(TAG)" = "UNDEF" ]; then echo "please provide a valid TAG" && exit 1; fi
 	docker build -t $(PROJECTNAME):$(TAG) -f Dockerfile-$(TAG) --pull .
 	if [ "$(TAG)" = "$(LATEST_TAG)" ]; then docker tag $(PROJECTNAME):$(TAG) $(PROJECTNAME):latest; fi
 
-run:
+start:
 	if [ "$(TAG)" = "UNDEF" ]; then echo "please provide a valid TAG" && exit 1; fi
 	docker run -ti -d \
 		-v $$(pwd)/tests:/tests \
@@ -41,3 +41,6 @@ test-install:
 test-various:
 	docker exec -t existenz_builder_instance php tests/iconv.php
 	docker exec -t existenz_builder_instance php -m | grep -q "zlib"
+
+shell:
+	docker exec -ti existenz_builder_instance sh

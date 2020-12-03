@@ -6,13 +6,14 @@ matrix:
     - env: PHP_VERSION=7.2
     - env: PHP_VERSION=7.3
     - env: PHP_VERSION=7.4-codecasts
+    - env: PHP_VERSION=8.0-codecasts
 
 services:
   - docker
 
 script:
   - make build TAG=$(printenv PHP_VERSION)
-  - make run TAG=$(printenv PHP_VERSION)
+  - make start TAG=$(printenv PHP_VERSION)
   - make test TAG=$(printenv PHP_VERSION)
   - make stop
 
