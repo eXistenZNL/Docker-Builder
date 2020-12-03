@@ -1,4 +1,4 @@
-FROM alpine:3.10
+FROM alpine:3.12
 
 LABEL maintainer="docker@stefan-van-essen.nl"
 
@@ -6,7 +6,7 @@ ENV LANG='en_US.UTF-8' LANGUAGE='en_US.UTF-8' TERM='xterm'
 
 ADD https://dl.bintray.com/php-alpine/key/php-alpine.rsa.pub /etc/apk/keys/php-alpine.rsa.pub
 RUN apk --update add ca-certificates
-RUN echo "https://dl.bintray.com/php-alpine/v3.10/php-7.4" >> /etc/apk/repositories
+RUN echo "https://dl.bintray.com/php-alpine/v3.12/php-7.4" >> /etc/apk/repositories
 
 # Temporary workaround for problems with php7-iconv on Alpine based PHP images
 # See https://github.com/docker-library/php/issues/240 for more info
@@ -59,15 +59,14 @@ RUN apk -U --no-cache add \
     php7-session \
     php7-snmp \
     php7-soap \
-    php7-xdebug \
     php7-xml \
     php7-xmlreader \
     php7-zip \
     php7-zlib \
+    php-xdebug \
     zlib-dev \
     && ln -s /usr/bin/php7 /usr/bin/php \
     && curl --silent --show-error https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer \
     && npm install -g --unsafe-perm yarn
 
 COPY cache-tool.sh /usr/local/bin/cache-tool
-
