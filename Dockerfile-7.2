@@ -1,8 +1,13 @@
 FROM alpine:3.8
 
-MAINTAINER docker@stefan-van-essen.nl
+LABEL maintainer="docker@stefan-van-essen.nl"
 
 ENV LANG='en_US.UTF-8' LANGUAGE='en_US.UTF-8' TERM='xterm'
+
+# Temporary workaround for problems with php7-iconv on Alpine based PHP images
+# See https://github.com/docker-library/php/issues/240 for more info
+RUN apk add --no-cache --repository http://dl-cdn.alpinelinux.org/alpine/v3.12/community/ gnu-libiconv=1.15-r2
+ENV LD_PRELOAD='/usr/lib/preloadable_libiconv.so php'
 
 RUN apk -U --no-cache add \
     alpine-sdk \
@@ -66,8 +71,3 @@ RUN apk -U --no-cache add \
     && sed -i 's/;zend/zend/g' /etc/php7/conf.d/xdebug.ini
 
 COPY cache-tool.sh /usr/local/bin/cache-tool
-
-# Temporary workaround for problems with php-iconv on Alpine based PHP images
-# See https://github.com/docker-library/php/issues/240 for more info
-RUN apk add gnu-libiconv --no-cache --repository http://dl-cdn.alpinelinux.org/alpine/edge/community/
-ENV LD_PRELOAD='/usr/lib/preloadable_libiconv.so php'
