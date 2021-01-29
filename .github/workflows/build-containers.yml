@@ -29,4 +29,4 @@ jobs:
           password: ${{ secrets.DOCKERHUB_TOKEN }}
       - name: Push the container to Docker Hub
         if: github.repository_owner == 'eXistenZNL' && github.ref == 'refs/heads/master'
-        run: docker push existenz/webstack
+        run: docker push existenz/builder
