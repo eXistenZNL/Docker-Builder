@@ -1,10 +1,11 @@
-.PHONY: build run stop clean test
-
 # Variables
 PROJECTNAME=existenz/builder
 TAG=UNDEF
 PHP_VERSION=$(shell echo "$(TAG)" | sed -e 's/-codecasts//')
 LATEST_TAG=8.0-codecasts
+
+.PHONY: all
+all: build start test stop clean
 
 build:
 	if [ "$(TAG)" = "UNDEF" ]; then echo "please provide a valid TAG" && exit 1; fi
