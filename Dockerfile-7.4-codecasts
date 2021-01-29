@@ -10,7 +10,7 @@ RUN echo "https://dl.bintray.com/php-alpine/v3.12/php-7.4" >> /etc/apk/repositor
 
 # Temporary workaround for problems with php7-iconv on Alpine based PHP images
 # See https://github.com/docker-library/php/issues/240 for more info
-RUN apk add gnu-libiconv --no-cache --repository http://dl-cdn.alpinelinux.org/alpine/edge/community/
+RUN apk add --no-cache --repository http://dl-cdn.alpinelinux.org/alpine/edge/community/ gnu-libiconv=1.15-r2
 ENV LD_PRELOAD='/usr/lib/preloadable_libiconv.so php'
 
 RUN apk -U --no-cache add \
