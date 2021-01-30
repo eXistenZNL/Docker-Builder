@@ -1,6 +1,6 @@
 # Docker Builder
 
-[![Build Status](https://img.shields.io/github/workflow/status/eXistenZNL/Docker-Builder/build-containers?style=flat-square)](https://github.com/eXistenZNL/Docker-Builder/actions) [![Docker Pulls](https://img.shields.io/docker/pulls/existenz/builder.svg?style=flat-square)](https://hub.docker.com/r/existenz/builder/) [![License](https://img.shields.io/github/license/existenznl/docker-builder.svg?style=flat-square)](https://github.com/eXistenZNL/Docker-Builder/blob/master/LICENSE)
+[![Build Status](https://img.shields.io/github/workflow/status/eXistenZNL/Docker-Builder/Build%20containers?style=flat-square)](https://github.com/eXistenZNL/Docker-Builder/actions) [![Docker Pulls](https://img.shields.io/docker/pulls/existenz/builder.svg?style=flat-square)](https://hub.docker.com/r/existenz/builder/) [![License](https://img.shields.io/github/license/existenznl/docker-builder.svg?style=flat-square)](https://github.com/eXistenZNL/Docker-Builder/blob/master/LICENSE)
 
 ## About
 A container that holds all the tools needed to build a run-of-the-mill modern PHP project in a CI like GitLab-CI.
