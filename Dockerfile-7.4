@@ -18,10 +18,10 @@ RUN apk -U --no-cache add \
     curl \
     cmake \
     docker \
+    gcc \
     gettext-dev \
     git \
     g++ \
-    gcc \
     gnu-libiconv \
     libintl \
     libjpeg-turbo \
@@ -77,8 +77,9 @@ RUN apk -U --no-cache add \
     && sed -i 's/;zend/zend/g' /etc/php7/conf.d/50_xdebug.ini \
     && curl https://gitlab.com/rilian-la-te/musl-locales/-/archive/master/musl-locales-master.zip --output musl-locales-master.zip \
     && unzip musl-locales-master.zip \
-      && cd musl-locales-master \
-      && cmake -DLOCALE_PROFILE=OFF -D CMAKE_INSTALL_PREFIX:PATH=/usr . && make && make install \
-      && cd .. && rm -r musl-locales-master
+    && cd musl-locales-master \
+    && cmake -DLOCALE_PROFILE=OFF -D CMAKE_INSTALL_PREFIX:PATH=/usr . && make && make install \
+    && cd .. && rm -r musl-locales-master \
+    && rm musl-locales-master.zip
 
 COPY cache-tool.sh /usr/local/bin/cache-tool
