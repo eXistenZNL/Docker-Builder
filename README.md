@@ -143,11 +143,9 @@ The containers are automatically rebuilt and tested every week to make sure they
 
 ## Version matrix
 
+> Codecasts containers are no longer provided, see [this issue](https://github.com/codecasts/php-alpine/issues/131) for more information.
+
 This container is available in different versions, see below what's in each version:
-
-Click any version to see what specific version is currently available, but keep in mind that this might differ slightly from the moment these containers were built.
-
-Also keep in mind that the Codecasts repo, whilst providing the latest versions of PHP, might not have all PHP extensions you need.
 
 | Container version      | PHP                                                                     | NodeJS                                                              | Yarn                                          | Composer                                  |
 | -----------------------|-------------------------------------------------------------------------|---------------------------------------------------------------------|-----------------------------------------------|-------------------------------------------|
@@ -157,9 +155,7 @@ Also keep in mind that the Codecasts repo, whilst providing the latest versions 
 | 7.2                    | [7.2](https://pkgs.alpinelinux.org/package/v3.8/community/x86_64/php7)  | [8](https://pkgs.alpinelinux.org/package/v3.8/main/x86_64/nodejs)   | [Latest stable](https://yarnpkg.com/lang/en/) | [Latest stable](https://getcomposer.org/) |
 | 7.3                    | [7.3](https://pkgs.alpinelinux.org/package/v3.10/community/x86_64/php7) | [10](https://pkgs.alpinelinux.org/package/v3.10/main/x86_64/nodejs) | [Latest stable](https://yarnpkg.com/lang/en/) | [Latest stable](https://getcomposer.org/) |
 | 7.4                    | [7.4](https://pkgs.alpinelinux.org/package/v3.13/community/x86_64/php7) | [10](https://pkgs.alpinelinux.org/package/v3.13/main/x86_64/nodejs) | [Latest stable](https://yarnpkg.com/lang/en/) | [Latest stable](https://getcomposer.org/) |
-| 7.4-codecasts          | [7.4](https://dl.bintray.com/php-alpine/v3.12/php-7.4/x86_64/)          | [14](https://pkgs.alpinelinux.org/package/v3.13/main/x86_64/nodejs) | [Latest stable](https://yarnpkg.com/lang/en/) | [Latest stable](https://getcomposer.org/) |
 | 8.0                    | [8.0](https://pkgs.alpinelinux.org/package/v3.13/community/x86_64/php8) | [10](https://pkgs.alpinelinux.org/package/v3.10/main/x86_64/nodejs) | [Latest stable](https://yarnpkg.com/lang/en/) | [Latest stable](https://getcomposer.org/) |
-| 8.0-codecasts (latest) | [8.0](https://dl.bintray.com/php-alpine/v3.12/php-8.0/x86_64/)          | [14](https://pkgs.alpinelinux.org/package/v3.13/main/x86_64/nodejs) | [Latest stable](https://yarnpkg.com/lang/en/) | [Latest stable](https://getcomposer.org/) |
 
 ## Bugs, questions, and improvements
 
