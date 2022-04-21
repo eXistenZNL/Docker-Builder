@@ -1,3 +1,8 @@
+FROM alpine:3.13 as libiconv
+
+RUN apk -U --no-cache add \
+    gnu-libiconv
+
 FROM alpine:edge
 
 LABEL maintainer="docker@stefan-van-essen.nl"
@@ -8,6 +13,8 @@ ENV LANG='en_US.UTF-8' LANGUAGE='en_US.UTF-8' TERM='xterm'
 # See https://github.com/docker-library/php/issues/240 for more info
 ENV LD_PRELOAD='/usr/lib/preloadable_libiconv.so php'
 ENV MUSL_LOCPATH /usr/share/i18n/locales/musl
+
+COPY --from=libiconv /usr/lib/preloadable_libiconv.so /usr/lib/preloadable_libiconv.so
 
 RUN apk -U --no-cache add ca-certificates && \
     echo "http://dl-cdn.alpinelinux.org/alpine/edge/testing" >> /etc/apk/repositories
