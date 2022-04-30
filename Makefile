@@ -1,7 +1,7 @@
 # Variables
 PROJECTNAME=existenz/builder
 TAG=UNDEF
-PHP_VERSION=$(shell echo "$(TAG)" | sed -e 's/-codecasts//')
+PHP_VERSION=$(shell echo "$(TAG)" | sed -e 's/-.*//')
 LATEST_TAG=8.0-codecasts
 
 .PHONY: all

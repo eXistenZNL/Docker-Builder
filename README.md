@@ -143,19 +143,26 @@ The containers are automatically rebuilt and tested every week to make sure they
 
 ## Version matrix
 
-> Codecasts containers are no longer provided, see [this issue](https://github.com/codecasts/php-alpine/issues/131) for more information.
+> Tags ending with a `-description` install packages from different repositories to keep up with the latest PHP
+> versions. These are probably short lived and will be replaced with their default counterpart as soon as these PHP
+> versions make it into the default Alpine repositories. You can use them, just keep in mind you will have to switch
+> over to the default container at one point.
+>
+> Codecasts containers are no longer provided, see [this issue](https://github.com/codecasts/php-alpine/issues/131) for
+> more information.
 
-This container is available in different versions, see below what's in each version:
+See the table below to see what versions are currently available:
 
-| Container version      | PHP                                                                     | NodeJS                                                              | Yarn                                          | Composer                                  |
-| -----------------------|-------------------------------------------------------------------------|---------------------------------------------------------------------|-----------------------------------------------|-------------------------------------------|
-| 5.6                    | [5.6](https://pkgs.alpinelinux.org/package/v3.5/main/x86_64/php5)       | [6](https://pkgs.alpinelinux.org/package/v3.5/main/x86_64/nodejs)   | [Latest stable](https://yarnpkg.com/lang/en/) | [Latest stable](https://getcomposer.org/) |
-| 7.0                    | [7.0](https://pkgs.alpinelinux.org/package/v3.5/community/x86_64/php7)  | [6](https://pkgs.alpinelinux.org/package/v3.5/main/x86_64/nodejs)   | [Latest stable](https://yarnpkg.com/lang/en/) | [Latest stable](https://getcomposer.org/) |
-| 7.1                    | [7.1](https://pkgs.alpinelinux.org/package/v3.6/community/x86_64/php7)  | [6](https://pkgs.alpinelinux.org/package/v3.6/main/x86_64/nodejs)   | [Latest stable](https://yarnpkg.com/lang/en/) | [Latest stable](https://getcomposer.org/) |
-| 7.2                    | [7.2](https://pkgs.alpinelinux.org/package/v3.9/community/x86_64/php7)  | [8](https://pkgs.alpinelinux.org/package/v3.9/main/x86_64/nodejs)   | [Latest stable](https://yarnpkg.com/lang/en/) | [Latest stable](https://getcomposer.org/) |
-| 7.3                    | [7.3](https://pkgs.alpinelinux.org/package/v3.10/community/x86_64/php7) | [10](https://pkgs.alpinelinux.org/package/v3.10/main/x86_64/nodejs) | [Latest stable](https://yarnpkg.com/lang/en/) | [Latest stable](https://getcomposer.org/) |
-| 7.4                    | [7.4](https://pkgs.alpinelinux.org/package/v3.13/community/x86_64/php7) | [10](https://pkgs.alpinelinux.org/package/v3.13/main/x86_64/nodejs) | [Latest stable](https://yarnpkg.com/lang/en/) | [Latest stable](https://getcomposer.org/) |
-| 8.0                    | [8.0](https://pkgs.alpinelinux.org/package/v3.13/community/x86_64/php8) | [10](https://pkgs.alpinelinux.org/package/v3.10/main/x86_64/nodejs) | [Latest stable](https://yarnpkg.com/lang/en/) | [Latest stable](https://getcomposer.org/) |
+| Image tag | Based on          | PHP                                                                                             | NodeJS                                                                                     | Yarn                                          | Composer                                  |
+|-----------|-------------------|-------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------|-----------------------------------------------|-------------------------------------------|
+| 5.6       | Alpine Linux 3.5  | [5.6](https://pkgs.alpinelinux.org/packages?name=php5*&branch=v3.5&repo=community&arch=x86_64)  | [6](https://pkgs.alpinelinux.org/packages?name=nodejs&branch=v3.5&repo=main&arch=x86_64)   | [Latest stable](https://yarnpkg.com/lang/en/) | [Latest stable](https://getcomposer.org/) |
+| 7.0       | Alpine Linux 3.5  | [7.0](https://pkgs.alpinelinux.org/packages?name=php7*&branch=v3.5&repo=community&arch=x86_64)  | [6](https://pkgs.alpinelinux.org/packages?name=nodejs&branch=v3.5&repo=main&arch=x86_64)   | [Latest stable](https://yarnpkg.com/lang/en/) | [Latest stable](https://getcomposer.org/) |
+| 7.1       | Alpine Linux 3.7  | [7.1](https://pkgs.alpinelinux.org/packages?name=php7*&branch=v3.7&repo=community&arch=x86_64)  | [8](https://pkgs.alpinelinux.org/packages?name=nodejs&branch=v3.7&repo=main&arch=x86_64)   | [Latest stable](https://yarnpkg.com/lang/en/) | [Latest stable](https://getcomposer.org/) |
+| 7.2       | Alpine Linux 3.9  | [7.2](https://pkgs.alpinelinux.org/packages?name=php7*&branch=v3.9&repo=community&arch=x86_64)  | [10](https://pkgs.alpinelinux.org/packages?name=nodejs&branch=v3.9&repo=main&arch=x86_64)  | [Latest stable](https://yarnpkg.com/lang/en/) | [Latest stable](https://getcomposer.org/) |
+| 7.3       | Alpine Linux 3.10 | [7.3](https://pkgs.alpinelinux.org/packages?name=php7*&branch=v3.10&repo=community&arch=x86_64) | [10](https://pkgs.alpinelinux.org/packages?name=nodejs&branch=v3.10&repo=main&arch=x86_64) | [Latest stable](https://yarnpkg.com/lang/en/) | [Latest stable](https://getcomposer.org/) |
+| 7.4       | Alpine Linux 3.13 | [7.4](https://pkgs.alpinelinux.org/packages?name=php7*&branch=v3.13&repo=community&arch=x86_64) | [14](https://pkgs.alpinelinux.org/packages?name=nodejs&branch=v3.13&repo=main&arch=x86_64) | [Latest stable](https://yarnpkg.com/lang/en/) | [Latest stable](https://getcomposer.org/) |
+| 8.0       | Alpine Linux 3.13 | [8.0](https://pkgs.alpinelinux.org/packages?name=php8*&branch=v3.15&repo=community&arch=x86_64) | [16](https://pkgs.alpinelinux.org/packages?name=nodejs&branch=v3.15&repo=main&arch=x86_64) | [Latest stable](https://yarnpkg.com/lang/en/) | [Latest stable](https://getcomposer.org/) |
+| 8.1-edge  | Alpine Linux 3.15 | [8.1](https://pkgs.alpinelinux.org/packages?name=php81*&branch=edge&repo=testing&arch=x86_64)   | [16](https://pkgs.alpinelinux.org/packages?name=nodejs&branch=v3.15&repo=main&arch=x86_64) | [Latest stable](https://yarnpkg.com/lang/en/) | [Latest stable](https://getcomposer.org/) |
 
 ## Bugs, questions, and improvements
 
