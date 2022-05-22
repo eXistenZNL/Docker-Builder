@@ -3,7 +3,7 @@ FROM alpine:3.13 as libiconv
 RUN apk -U --no-cache add \
     gnu-libiconv
 
-FROM alpine:edge
+FROM alpine:3.15
 
 LABEL maintainer="docker@stefan-van-essen.nl"
 
@@ -16,8 +16,9 @@ ENV MUSL_LOCPATH /usr/share/i18n/locales/musl
 
 COPY --from=libiconv /usr/lib/preloadable_libiconv.so /usr/lib/preloadable_libiconv.so
 
-RUN apk -U --no-cache add ca-certificates && \
-    echo "http://dl-cdn.alpinelinux.org/alpine/edge/testing" >> /etc/apk/repositories
+RUN apk -U --no-cache add ca-certificates \
+    && echo "http://dl-cdn.alpinelinux.org/alpine/edge/community" >> /etc/apk/repositories \
+    && echo "http://dl-cdn.alpinelinux.org/alpine/edge/main" >> /etc/apk/repositories
 
 RUN apk -U --no-cache add \
     alpine-sdk \
