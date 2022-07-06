@@ -17,10 +17,6 @@ runtest () {
     make stop TAG=$1 > /dev/null 2>&1
 }
 
-runtest "5.6"
-runtest "7.0"
-runtest "7.1"
-runtest "7.2"
-runtest "7.3"
-runtest "7.4-codecasts"
-runtest "8.0-codecasts"
+runtest "7.4"
+runtest "8.0"
+runtest "8.1"

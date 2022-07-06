@@ -1,3 +1,17 @@
+FROM alpine:3.13 as locales
+
+RUN apk -U --no-cache add \
+    alpine-sdk \
+    automake \
+    cmake \
+    gettext-dev \
+    libintl \
+    musl-dev
+
+RUN curl https://gitlab.com/rilian-la-te/musl-locales/-/archive/master/musl-locales-master.zip --output musl-locales-master.zip \
+    && unzip musl-locales-master.zip && cd musl-locales-master \
+    && cmake -DLOCALE_PROFILE=OFF -D CMAKE_INSTALL_PREFIX:PATH=/usr . && make && make install
+
 FROM alpine:3.13
 
 LABEL maintainer="docker@stefan-van-essen.nl"
@@ -7,21 +21,18 @@ ENV LANG='en_US.UTF-8' LANGUAGE='en_US.UTF-8' TERM='xterm'
 # Temporary workaround for problems with php8-iconv on Alpine based PHP images
 # See https://github.com/docker-library/php/issues/240 for more info
 ENV LD_PRELOAD='/usr/lib/preloadable_libiconv.so php'
+
+# Load the built locales from this location
 ENV MUSL_LOCPATH /usr/share/i18n/locales/musl
+COPY --from=locales /usr/share/i18n/locales/musl /usr/share/i18n/locales/musl
 
 RUN apk -U --no-cache add \
-    alpine-sdk \
-    autoconf \
-    automake \
-    build-base \
     bash \
     curl \
     cmake \
     docker \
-    gcc \
     gettext-dev \
     git \
-    g++ \
     gnu-libiconv \
     libintl \
     libjpeg-turbo \
@@ -31,9 +42,6 @@ RUN apk -U --no-cache add \
     libtool \
     libwebp \
     libwebp-dev \
-    make \
-    musl-dev \
-    nasm \
     nodejs \
     nodejs-npm \
     openssh \
@@ -74,12 +82,5 @@ RUN apk -U --no-cache add \
     && ln -s /usr/bin/php8 /usr/bin/php \
     && curl --silent --show-error https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer \
     && npm install -g --unsafe-perm yarn \
-    && sed -i 's/;zend/zend/g' /etc/php8/conf.d/50_xdebug.ini \
-    && curl https://gitlab.com/rilian-la-te/musl-locales/-/archive/master/musl-locales-master.zip --output musl-locales-master.zip \
-    && unzip musl-locales-master.zip \
-    && cd musl-locales-master \
-    && cmake -DLOCALE_PROFILE=OFF -D CMAKE_INSTALL_PREFIX:PATH=/usr . && make && make install \
-    && cd .. && rm -r musl-locales-master \
-    && rm musl-locales-master.zip
-
+    && sed -i 's/;zend/zend/g' /etc/php8/conf.d/50_xdebug.ini
 COPY cache-tool.sh /usr/local/bin/cache-tool

@@ -41,6 +41,7 @@ test-install:
 
 test-various:
 	docker exec -t existenz_builder_instance php tests/iconv.php
+	docker exec -t existenz_builder_instance php tests/locales.php
 	docker exec -t existenz_builder_instance php -m | grep -q "zlib"
 
 shell:
