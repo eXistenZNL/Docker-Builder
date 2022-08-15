@@ -28,6 +28,7 @@ COPY --from=locales /usr/share/i18n/locales/musl /usr/share/i18n/locales/musl
 
 RUN apk -U --no-cache add \
     bash \
+    buildah \
     curl \
     cmake \
     docker \
@@ -78,6 +79,7 @@ RUN apk -U --no-cache add \
     php8-xmlwriter \
     php8-zip \
     php8-zlib \
+    podman \
     zlib-dev \
     && ln -s /usr/bin/php8 /usr/bin/php \
     && curl --silent --show-error https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer \
