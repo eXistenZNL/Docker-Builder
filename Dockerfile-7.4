@@ -26,9 +26,12 @@ ENV LD_PRELOAD='/usr/lib/preloadable_libiconv.so php'
 ENV MUSL_LOCPATH /usr/share/i18n/locales/musl
 COPY --from=locales /usr/share/i18n/locales/musl /usr/share/i18n/locales/musl
 
+RUN apk -U --no-cache add --repository=https://dl-cdn.alpinelinux.org/alpine/edge/community/ \
+    buildah \
+    podman
+
 RUN apk -U --no-cache add \
     bash \
-    buildah \
     curl \
     docker \
     git \
@@ -78,7 +81,6 @@ RUN apk -U --no-cache add \
     php7-xmlwriter \
     php7-zip \
     php7-zlib \
-    podman \
     zlib-dev \
     && curl --silent --show-error https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer \
     && npm install -g --unsafe-perm yarn \
