@@ -83,4 +83,6 @@ RUN apk -U --no-cache add \
     && npm install -g --unsafe-perm yarn \
     && sed -i 's/;zend/zend/g' /etc/php81/conf.d/50_xdebug.ini
 
+RUN apk add --no-cache --repository http://dl-cdn.alpinelinux.org/alpine/edge/community/ buildah podman
+
 COPY cache-tool.sh /usr/local/bin/cache-tool

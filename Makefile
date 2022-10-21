@@ -38,6 +38,8 @@ test-install:
 	docker exec -t existenz_builder_instance node --version > /dev/null
 	docker exec -t existenz_builder_instance npm --version > /dev/null
 	docker exec -t existenz_builder_instance yarn --version > /dev/null
+	docker exec -t existenz_builder_instance buildah --version > /dev/null
+	docker exec -t existenz_builder_instance podman --version > /dev/null
 
 test-various:
 	docker exec -t existenz_builder_instance php tests/iconv.php
