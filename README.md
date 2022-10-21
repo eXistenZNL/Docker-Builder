@@ -3,9 +3,10 @@
 [![Build Status](https://img.shields.io/github/workflow/status/eXistenZNL/Docker-Builder/Build%20containers?style=flat-square)](https://github.com/eXistenZNL/Docker-Builder/actions) [![Docker Pulls](https://img.shields.io/docker/pulls/existenz/builder.svg?style=flat-square)](https://hub.docker.com/r/existenz/builder/) [![License](https://img.shields.io/github/license/existenznl/docker-builder.svg?style=flat-square)](https://github.com/eXistenZNL/Docker-Builder/blob/master/LICENSE) [![Sponsors](https://img.shields.io/github/sponsors/eXistenZNL?color=hotpink&style=flat-square)](https://github.com/sponsors/eXistenZNL)
 
 ## About
+
 A container that holds all the tools needed to build a run-of-the-mill modern PHP project in a CI like GitLab-CI.
 Optimized for Docker-in-Docker builds that build and push another container to a registry.
-Built upon [Alpine Linux](https://alpinelinux.org/), and comes with the latest and greatest of the tools listed below
+Built upon [Alpine Linux](https://alpinelinux.org/), and comes with the latest and greatest of the tools listed below:
 
 ### Tools
 
