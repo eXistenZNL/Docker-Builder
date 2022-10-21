@@ -5,11 +5,22 @@
 ## About
 A container that holds all the tools needed to build a run-of-the-mill modern PHP project in a CI like GitLab-CI.
 Optimized for Docker-in-Docker builds that build and push another container to a registry.
-Built upon [Alpine Linux](https://alpinelinux.org/), and comes with the latest [PHP](https://secure.php.net/),
-[Composer](https://getcomposer.org/), [NodeJS](https://nodejs.org/en/), [NPM](https://www.npmjs.com/) and
-[Yarn](https://yarnpkg.com/lang/en/).
+Built upon [Alpine Linux](https://alpinelinux.org/), and comes with the latest and greatest of the tools listed below
+
+### Tools
+
+ - [PHP](https://secure.php.net/)
+ - [Composer](https://getcomposer.org/)
+ - [NodeJS](https://nodejs.org/en/)
+ - [NPM](https://www.npmjs.com/)
+ - [Yarn](https://yarnpkg.com/lang/en/)
+ - [Docker](https://www.docker.com/)
+ - [Buildah](https://buildah.io/)
+ - [Podman](https://podman.io/)
+
 
 ## Why
+
 That's an easy one: speed. Lots of different approaches are taken when setting up a CI pipeline, but not all setups are
 as fast as they could be. One of the approaches I've seen is where the build is ran inside a pretty clean container, and
 every tool needed (Composer, NPM, etc.) is pulled in via Docker. And since Docker-in-Docker has no possibility to cache
