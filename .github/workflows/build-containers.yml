@@ -3,7 +3,9 @@ name: Build containers
 on:
   workflow_dispatch:
   pull_request:
+    branches: [ master ]
   push:
+    branches: [ master ]
   schedule:
     - cron: "0 1 * * *"
 
