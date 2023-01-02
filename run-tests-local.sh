@@ -20,3 +20,4 @@ runtest () {
 runtest "7.4"
 runtest "8.0"
 runtest "8.1"
+runtest "8.2"
