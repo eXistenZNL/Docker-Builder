@@ -3,7 +3,7 @@
 runtest () {
     echo ""
     echo "Testing tag $1"
-    echo " > Stopping.any running containers.. "
+    echo " > Stopping any running containers.. "
     make stop TAG=$1 > /dev/null 2>&1
     echo -n " > Building... "
     make build TAG=$1 > /dev/null 2>&1
@@ -21,3 +21,4 @@ runtest "7.4"
 runtest "8.0"
 runtest "8.1"
 runtest "8.2"
+runtest "8.3"

@@ -2,14 +2,14 @@
 PROJECTNAME=existenz/builder
 TAG=UNDEF
 PHP_VERSION=$(shell echo "$(TAG)" | sed -e 's/-.*//')
-LATEST_TAG=8.2
+LATEST_TAG=8.3
 
 .PHONY: all
 all: build start test stop clean
 
 build:
 	if [ "$(TAG)" = "UNDEF" ]; then echo "please provide a valid TAG" && exit 1; fi
-	docker build -t $(PROJECTNAME):$(TAG) -f Dockerfile-$(TAG) --pull .
+	docker build -t $(PROJECTNAME):$(TAG) -f $(TAG).Dockerfile --pull .
 	if [ "$(TAG)" = "$(LATEST_TAG)" ]; then docker tag $(PROJECTNAME):$(TAG) $(PROJECTNAME):latest; fi
 
 start:
