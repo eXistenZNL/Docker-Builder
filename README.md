@@ -156,7 +156,7 @@ The containers are automatically rebuilt and tested every week to make sure they
 ## Version matrix
 
 > Tags ending with a `-description` install packages from different repositories to keep up with the latest PHP
-> versions. These are probably short lived and will be replaced with their default counterpart as soon as these PHP
+> versions. These are probably short-lived and will be replaced with their default counterpart as soon as these PHP
 > versions make it into the default Alpine repositories. You can use them, just keep in mind you will have to switch
 > over to the default container at one point.
 >
@@ -169,8 +169,8 @@ See the table below to see what versions are currently available:
 |-----------|-------------------|-------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------|-----------------------------------------------|-------------------------------------------|
 | 7.4       | Alpine Linux 3.13 | [7.4](https://pkgs.alpinelinux.org/packages?name=php7*&branch=v3.13&repo=community&arch=x86_64) | [14](https://pkgs.alpinelinux.org/packages?name=nodejs&branch=v3.13&repo=main&arch=x86_64) | [Latest stable](https://yarnpkg.com/lang/en/) | [Latest stable](https://getcomposer.org/) |
 | 8.0       | Alpine Linux 3.13 | [8.0](https://pkgs.alpinelinux.org/packages?name=php8*&branch=v3.15&repo=community&arch=x86_64) | [16](https://pkgs.alpinelinux.org/packages?name=nodejs&branch=v3.15&repo=main&arch=x86_64) | [Latest stable](https://yarnpkg.com/lang/en/) | [Latest stable](https://getcomposer.org/) |
-| 8.1       | Alpine Linux 3.16 | [8.1](https://pkgs.alpinelinux.org/packages?name=php81*&branch=3.16&arch=x86_64)                | [16](https://pkgs.alpinelinux.org/packages?name=nodejs&branch=v3.16&repo=main&arch=x86_64) | [Latest stable](https://yarnpkg.com/lang/en/) | [Latest stable](https://getcomposer.org/) |
-| 8.2       | Alpine Linux 3.18 | [8.2](https://pkgs.alpinelinux.org/packages?name=php82*&branch=3.18&arch=x86_64)                | [18](https://pkgs.alpinelinux.org/packages?name=nodejs&branch=v3.18&repo=main&arch=x86_64) | [Latest stable](https://yarnpkg.com/lang/en/) | [Latest stable](https://getcomposer.org/) |
+| 8.1       | Alpine Linux 3.18 | [8.1](https://pkgs.alpinelinux.org/packages?name=php81*&branch=3.18&arch=x86_64)                | [18](https://pkgs.alpinelinux.org/packages?name=nodejs&branch=v3.18&repo=main&arch=x86_64) | [Latest stable](https://yarnpkg.com/lang/en/) | [Latest stable](https://getcomposer.org/) |
+| 8.2       | Alpine Linux 3.19 | [8.2](https://pkgs.alpinelinux.org/packages?name=php82*&branch=3.19&arch=x86_64)                | [20](https://pkgs.alpinelinux.org/packages?name=nodejs&branch=v3.19&repo=main&arch=x86_64) | [Latest stable](https://yarnpkg.com/lang/en/) | [Latest stable](https://getcomposer.org/) |
 | 8.3       | Alpine Linux 3.19 | [8.3](https://pkgs.alpinelinux.org/packages?name=php83*&branch=3.19&arch=x86_64)                | [20](https://pkgs.alpinelinux.org/packages?name=nodejs&branch=v3.19&repo=main&arch=x86_64) | [Latest stable](https://yarnpkg.com/lang/en/) | [Latest stable](https://getcomposer.org/) |
 
 ## Bugs, questions, and improvements
