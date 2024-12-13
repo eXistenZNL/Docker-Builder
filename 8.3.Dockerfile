@@ -1,4 +1,4 @@
-FROM alpine:3.13 as locales
+FROM alpine:3.21 as locales
 
 RUN apk -U --no-cache add \
     alpine-sdk \
@@ -13,7 +13,7 @@ RUN curl https://gitlab.com/rilian-la-te/musl-locales/-/archive/master/musl-loca
     && unzip musl-locales-master.zip && cd musl-locales-master \
     && cmake -DLOCALE_PROFILE=OFF -D CMAKE_INSTALL_PREFIX:PATH=/usr . && make && make install
 
-FROM alpine:3.19
+FROM alpine:3.21
 
 LABEL maintainer="docker@stefan-van-essen.nl"
 
