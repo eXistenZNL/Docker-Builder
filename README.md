@@ -151,9 +151,9 @@ build container:
 
 ## Automated builds
 
-The containers are automatically rebuilt and tested every week to make sure they are up to date.
+The containers are automatically rebuilt and tested every week to make sure they are up-to-date.
 
-## Version matrix
+## Versions
 
 > Tags ending with a `-description` install packages from different repositories to keep up with the latest PHP
 > versions. These are probably short-lived and will be replaced with their default counterpart as soon as these PHP
