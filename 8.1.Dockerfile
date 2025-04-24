@@ -13,7 +13,7 @@ RUN curl https://gitlab.com/rilian-la-te/musl-locales/-/archive/master/musl-loca
     && unzip musl-locales-master.zip && cd musl-locales-master \
     && cmake -DLOCALE_PROFILE=OFF -D CMAKE_INSTALL_PREFIX:PATH=/usr . && make && make install
 
-FROM alpine:3.18
+FROM alpine:3.19
 
 LABEL maintainer="docker@stefan-van-essen.nl"
 
@@ -79,6 +79,7 @@ RUN apk -U --no-cache add \
     php81-zip \
     php81-zlib \
     zlib-dev \
+    && ln -s /usr/bin/php81 /usr/bin/php \
     && curl --silent --show-error https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer \
     && npm install -g --unsafe-perm yarn \
     && sed -i 's/;zend/zend/g' /etc/php81/conf.d/50_xdebug.ini
