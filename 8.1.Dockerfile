@@ -1,4 +1,4 @@
-FROM alpine:3.13 as locales
+FROM alpine:3.13 AS locales
 
 RUN apk -U --no-cache add \
     alpine-sdk \
@@ -25,11 +25,12 @@ ENV LD_PRELOAD='/usr/lib/preloadable_libiconv.so php'
 COPY --from=locales /usr/lib/preloadable_libiconv.so /usr/lib/preloadable_libiconv.so
 
 # Load the built locales from this location
-ENV MUSL_LOCPATH /usr/share/i18n/locales/musl
+ENV MUSL_LOCPATH=/usr/share/i18n/locales/musl
 COPY --from=locales /usr/share/i18n/locales/musl /usr/share/i18n/locales/musl
 
 RUN apk -U --no-cache add \
     bash \
+    buildah \
     curl \
     docker \
     git \
@@ -78,11 +79,10 @@ RUN apk -U --no-cache add \
     php81-xmlwriter \
     php81-zip \
     php81-zlib \
+    podman \
     zlib-dev \
     && curl --silent --show-error https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer \
     && npm install -g --unsafe-perm yarn \
     && sed -i 's/;zend/zend/g' /etc/php81/conf.d/50_xdebug.ini
-
-RUN apk add --no-cache --repository http://dl-cdn.alpinelinux.org/alpine/edge/community/ buildah podman
 
 COPY cache-tool.sh /usr/local/bin/cache-tool

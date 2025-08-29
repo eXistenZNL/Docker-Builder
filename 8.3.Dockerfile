@@ -30,6 +30,7 @@ COPY --from=locales /usr/share/i18n/locales/musl /usr/share/i18n/locales/musl
 
 RUN apk -U --no-cache add \
     bash \
+    buildah \
     curl \
     docker \
     git \
@@ -78,12 +79,11 @@ RUN apk -U --no-cache add \
     php83-xmlwriter \
     php83-zip \
     php83-zlib \
+    podman \
     zlib-dev \
     && ln -s /usr/bin/php83 /usr/bin/php \
     && curl --silent --show-error https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer \
     && npm install -g --unsafe-perm yarn \
     && sed -i 's/;zend/zend/g' /etc/php83/conf.d/50_xdebug.ini
-
-RUN apk add --no-cache --repository http://dl-cdn.alpinelinux.org/alpine/edge/community/ buildah podman
 
 COPY cache-tool.sh /usr/local/bin/cache-tool
