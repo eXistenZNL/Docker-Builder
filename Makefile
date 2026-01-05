@@ -2,7 +2,7 @@
 PROJECTNAME=existenz/builder
 TAG=UNDEF
 PHP_VERSION=$(shell echo "$(TAG)" | sed -e 's/-.*//')
-LATEST_TAG=8.3
+LATEST_TAG=8.4
 
 .PHONY: all
 all: build start test stop clean
