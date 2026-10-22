@@ -47,5 +47,9 @@ test-various:
 	docker exec -t existenz_builder_instance php tests/locales.php
 	docker exec -t existenz_builder_instance php -m | grep -q "zlib"
 
+version:
+	@echo "Alpine version: $$(docker exec existenz_builder_instance cat /etc/alpine-release)"
+	@echo "PHP version: $$(docker exec existenz_builder_instance php --version | head -1 | cut -d' ' -f2)"
+
 shell:
 	docker exec -ti existenz_builder_instance sh
