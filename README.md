@@ -2,6 +2,12 @@
 
 [![Build Status](https://img.shields.io/github/actions/workflow/status/eXistenZNL/Docker-Builder/build-containers.yml?branch=master&style=flat-square)](https://github.com/eXistenZNL/Docker-Builder/actions) [![Docker Pulls](https://img.shields.io/docker/pulls/existenz/builder.svg?style=flat-square)](https://hub.docker.com/r/existenz/builder/) [![License](https://img.shields.io/github/license/existenznl/docker-builder.svg?style=flat-square)](https://github.com/eXistenZNL/Docker-Builder/blob/master/LICENSE) [![Sponsors](https://img.shields.io/github/sponsors/eXistenZNL?color=hotpink&style=flat-square)](https://github.com/sponsors/eXistenZNL)
 
+> [!WARNING]
+> **The 8.3, 8.4 and 8.5 images have moved to Alpine Linux 3.24.**
+> In light of CVE-2026-109618 and CVE-2026-109619, all images that can be moved now run on Alpine 3.24. Alpine only updates the PHP packages in its community repository until the next Alpine release, so the images on 3.22 and 3.23 had stopped receiving PHP security patches. On 3.24 they get the latest ones again. For the 8.3 and 8.4 images this also moves NodeJS from 22 to 24.
+>
+> **8.2 stays on Alpine 3.22**, because 3.24 has no PHP 8.2 packages. We expect the fix to reach 3.22 later than the other images: older PHP versions kept receiving updates on their last Alpine branch until their end of life, but 8.2.34 has not landed in 3.22 yet either. PHP 8.2 reaches end of life on 2026-12-31, so plan your move to a newer version.
+
 ## About
 
 A container that holds all the tools needed to build a run-of-the-mill modern PHP project in a CI like GitLab-CI.
@@ -165,11 +171,12 @@ The containers are automatically rebuilt and tested every week to make sure they
 
 See the table below to see what versions are currently available:
 
-| Image tag | Based on          | PHP                                                                              | NodeJS                                                                                     | Yarn                                          | Composer                                  |
-|-----------|-------------------|----------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------|-----------------------------------------------|-------------------------------------------|
-| 8.2       | Alpine Linux 3.22 | [8.2](https://pkgs.alpinelinux.org/packages?name=php82*&branch=3.22&arch=x86_64) | [22](https://pkgs.alpinelinux.org/packages?name=nodejs&branch=v3.22&repo=main&arch=x86_64) | [Latest stable](https://yarnpkg.com/lang/en/) | [Latest stable](https://getcomposer.org/) |
-| 8.3       | Alpine Linux 3.22 | [8.3](https://pkgs.alpinelinux.org/packages?name=php83*&branch=3.22&arch=x86_64) | [22](https://pkgs.alpinelinux.org/packages?name=nodejs&branch=v3.22&repo=main&arch=x86_64) | [Latest stable](https://yarnpkg.com/lang/en/) | [Latest stable](https://getcomposer.org/) |
-| 8.4       | Alpine Linux 3.22 | [8.4](https://pkgs.alpinelinux.org/packages?name=php84*&branch=3.22&arch=x86_64) | [22](https://pkgs.alpinelinux.org/packages?name=nodejs&branch=v3.22&repo=main&arch=x86_64) | [Latest stable](https://yarnpkg.com/lang/en/) | [Latest stable](https://getcomposer.org/) |
+| Image tag | Based on          | PHP                                                                               | NodeJS                                                                                     | Yarn                                          | Composer                                  |
+| --------- | ----------------- | --------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------ | --------------------------------------------- | ----------------------------------------- |
+| 8.2       | Alpine Linux 3.22 | [8.2](https://pkgs.alpinelinux.org/packages?name=php82*&branch=3.22&arch=x86_64)  | [22](https://pkgs.alpinelinux.org/packages?name=nodejs&branch=v3.22&repo=main&arch=x86_64) | [Latest stable](https://yarnpkg.com/lang/en/) | [Latest stable](https://getcomposer.org/) |
+| 8.3       | Alpine Linux 3.24 | [8.3](https://pkgs.alpinelinux.org/packages?name=php83*&branch=v3.24&arch=x86_64) | [24](https://pkgs.alpinelinux.org/packages?name=nodejs&branch=v3.24&repo=main&arch=x86_64) | [Latest stable](https://yarnpkg.com/lang/en/) | [Latest stable](https://getcomposer.org/) |
+| 8.4       | Alpine Linux 3.24 | [8.4](https://pkgs.alpinelinux.org/packages?name=php84*&branch=v3.24&arch=x86_64) | [24](https://pkgs.alpinelinux.org/packages?name=nodejs&branch=v3.24&repo=main&arch=x86_64) | [Latest stable](https://yarnpkg.com/lang/en/) | [Latest stable](https://getcomposer.org/) |
+| 8.5       | Alpine Linux 3.24 | [8.5](https://pkgs.alpinelinux.org/packages?name=php85*&branch=v3.24&arch=x86_64) | [24](https://pkgs.alpinelinux.org/packages?name=nodejs&branch=v3.24&repo=main&arch=x86_64) | [Latest stable](https://yarnpkg.com/lang/en/) | [Latest stable](https://getcomposer.org/) |
 
 ## Bugs, questions, and improvements
 

@@ -26,6 +26,11 @@ jobs:
         run: make start TAG=$(printenv TAG) && sleep 10
         env:
           TAG: ${{ matrix.tag }}
+      - name: Show the PHP version
+        run: |
+          VERSIONS=$(make version)
+          echo "$VERSIONS"
+          echo "$VERSIONS" | sed 's/^/- /' >> "$GITHUB_STEP_SUMMARY"
       - name: Test the container
         run: make test TAG=$(printenv TAG)
         env:

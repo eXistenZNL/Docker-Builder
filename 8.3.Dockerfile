@@ -1,19 +1,24 @@
-FROM alpine:3.13 as locales
+FROM alpine:3.24 as locales
 
 RUN apk -U --no-cache add \
-    alpine-sdk \
-    automake \
+    build-base \
     cmake \
+    curl \
     gettext-dev \
-    gnu-libiconv \
-    libintl \
-    musl-dev
+    unzip
+
+# GNU libiconv 1.15 is the last release that ships a preloadable library, and it only builds as C17 with a modern GCC
+RUN curl --silent --show-error --location https://ftp.gnu.org/pub/gnu/libiconv/libiconv-1.15.tar.gz | tar xz \
+    && cd libiconv-1.15 \
+    && CFLAGS='-O2 -std=gnu17' ./configure --prefix=/usr --enable-static=no \
+    && make \
+    && cp preload/preloadable_libiconv.so /usr/lib/preloadable_libiconv.so
 
 RUN curl https://gitlab.com/rilian-la-te/musl-locales/-/archive/master/musl-locales-master.zip --output musl-locales-master.zip \
     && unzip musl-locales-master.zip && cd musl-locales-master \
     && cmake -DLOCALE_PROFILE=OFF -D CMAKE_INSTALL_PREFIX:PATH=/usr . && make && make install
 
-FROM alpine:3.22
+FROM alpine:3.24
 
 LABEL maintainer="docker@stefan-van-essen.nl"
 
