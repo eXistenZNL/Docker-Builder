@@ -18,7 +18,7 @@ RUN curl https://gitlab.com/rilian-la-te/musl-locales/-/archive/master/musl-loca
     && unzip musl-locales-master.zip && cd musl-locales-master \
     && cmake -DLOCALE_PROFILE=OFF -D CMAKE_INSTALL_PREFIX:PATH=/usr . && make && make install
 
-FROM alpine:3.22
+FROM alpine:3.24
 
 LABEL maintainer="docker@stefan-van-essen.nl"
 
