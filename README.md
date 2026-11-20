@@ -177,6 +177,7 @@ See the table below to see what versions are currently available:
 | 8.3       | Alpine Linux 3.24 | [8.3](https://pkgs.alpinelinux.org/packages?name=php83*&branch=v3.24&arch=x86_64) | [24](https://pkgs.alpinelinux.org/packages?name=nodejs&branch=v3.24&repo=main&arch=x86_64) | [Latest stable](https://yarnpkg.com/lang/en/) | [Latest stable](https://getcomposer.org/) |
 | 8.4       | Alpine Linux 3.24 | [8.4](https://pkgs.alpinelinux.org/packages?name=php84*&branch=v3.24&arch=x86_64) | [24](https://pkgs.alpinelinux.org/packages?name=nodejs&branch=v3.24&repo=main&arch=x86_64) | [Latest stable](https://yarnpkg.com/lang/en/) | [Latest stable](https://getcomposer.org/) |
 | 8.5       | Alpine Linux 3.24 | [8.5](https://pkgs.alpinelinux.org/packages?name=php85*&branch=v3.24&arch=x86_64) | [24](https://pkgs.alpinelinux.org/packages?name=nodejs&branch=v3.24&repo=main&arch=x86_64) | [Latest stable](https://yarnpkg.com/lang/en/) | [Latest stable](https://getcomposer.org/) |
+| 8.6-edge  | Alpine Linux edge | [8.6](https://pkgs.alpinelinux.org/packages?name=php86*&branch=edge&arch=x86_64)  | [24](https://pkgs.alpinelinux.org/packages?name=nodejs&branch=edge&repo=main&arch=x86_64)  | [Latest stable](https://yarnpkg.com/lang/en/) | [Latest stable](https://getcomposer.org/) |
 
 ## Bugs, questions, and improvements
 
