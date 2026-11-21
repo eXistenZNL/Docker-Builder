@@ -1,6 +1,6 @@
 # Docker Builder
 
-[![Build Status](https://img.shields.io/github/actions/workflow/status/eXistenZNL/Docker-Builder/build-containers.yml?branch=master&style=flat-square)](https://github.com/eXistenZNL/Docker-Builder/actions) [![Docker Pulls](https://img.shields.io/docker/pulls/existenz/builder.svg?style=flat-square)](https://hub.docker.com/r/existenz/builder/) [![License](https://img.shields.io/github/license/existenznl/docker-builder.svg?style=flat-square)](https://github.com/eXistenZNL/Docker-Builder/blob/master/LICENSE) [![Sponsors](https://img.shields.io/github/sponsors/eXistenZNL?color=hotpink&style=flat-square)](https://github.com/sponsors/eXistenZNL)
+[![Build Status](https://img.shields.io/github/actions/workflow/status/eXistenZNL/Docker-Builder/build-containers.yml?branch=main&style=flat-square)](https://github.com/eXistenZNL/Docker-Builder/actions) [![Docker Pulls](https://img.shields.io/docker/pulls/existenz/builder.svg?style=flat-square)](https://hub.docker.com/r/existenz/builder/) [![License](https://img.shields.io/github/license/existenznl/docker-builder.svg?style=flat-square)](https://github.com/eXistenZNL/Docker-Builder/blob/main/LICENSE) [![Sponsors](https://img.shields.io/github/sponsors/eXistenZNL?color=hotpink&style=flat-square)](https://github.com/sponsors/eXistenZNL)
 
 > [!WARNING]
 > **The 8.3, 8.4 and 8.5 images have moved to Alpine Linux 3.24.**
@@ -181,7 +181,7 @@ See the table below to see what versions are currently available:
 ## Bugs, questions, and improvements
 
 If you found a bug or have a question, please open an issue on the GitHub Issue tracker.
-Improvements can be sent by a Pull Request against the master branch and are greatly appreciated!
+Improvements can be sent by a Pull Request against the main branch and are greatly appreciated!
 
 ## Contributors
 
