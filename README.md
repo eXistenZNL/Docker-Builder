@@ -132,7 +132,7 @@ cache:
     - vendor/
 
 test:
-  image: existenz/builder:latest
+  image: existenz/builder:8.5
   stage: testCode
   before_script:
     - cache-tool extract yarn:/usr/local/share/.cache/yarn composer:~/.composer
@@ -143,7 +143,7 @@ test:
     - cache-tool collect yarn:/usr/local/share/.cache/yarn composer:~/.composer
 
 build container:
-  image: existenz/builder:latest
+  image: existenz/builder:8.5
   stage: buildContainer
   before_script:
     - cache-tool extract yarn:/usr/local/share/.cache/yarn composer:~/.composer
