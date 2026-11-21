@@ -16,15 +16,14 @@ Built upon [Alpine Linux](https://alpinelinux.org/), and comes with the latest a
 
 ### Tools
 
- - [PHP](https://secure.php.net/)
- - [Composer](https://getcomposer.org/)
- - [NodeJS](https://nodejs.org/en/)
- - [NPM](https://www.npmjs.com/)
- - [Yarn](https://yarnpkg.com/lang/en/)
- - [Docker](https://www.docker.com/)
- - [Buildah](https://buildah.io/)
- - [Podman](https://podman.io/)
-
+- [PHP](https://secure.php.net/)
+- [Composer](https://getcomposer.org/)
+- [NodeJS](https://nodejs.org/en/)
+- [NPM](https://www.npmjs.com/)
+- [Yarn](https://yarnpkg.com/lang/en/)
+- [Docker](https://www.docker.com/)
+- [Buildah](https://buildah.io/)
+- [Podman](https://podman.io/)
 
 ## Why
 
@@ -48,18 +47,20 @@ Actually, quite simple. The scenario this container is built for is a
 [GitLab-CI](https://about.gitlab.com/features/gitlab-ci-cd/) environment that runs in
 [Docker-in-Docker](https://docs.gitlab.com/ce/ci/docker/using_docker_build.html#use-docker-in-docker-executor) mode.
 This means the following:
+
 - To build a container without the Docker socket exposed, we must run a Docker instance inside our container using the
-`docker:dind` container as a service.
+  `docker:dind` container as a service.
 - Any container being pulled by the inner docker instance will not be cached since the container will be destroyed
-afterwards.
+  afterwards.
 - The only container can be cached is the container which is specified in `gitlab-ci.yml` and in which our build is
-running, because this container is being pulled by the GitLab runner which controls the outside Docker instance.
+  running, because this container is being pulled by the GitLab runner which controls the outside Docker instance.
 
 This container brings the following advantages:
+
 - The image itself is being cached by the GitLab runner, so all tools needed are instantly available.
 - Because all the tools you need are embedded, no external tools need to be pulled in over and over again.
 - The image has a little helper on board that makes is possible to cache stuff outside of the build directory so more
-stuff can be cached and re-used between stages in a pipeline.
+  stuff can be cached and re-used between stages in a pipeline.
 
 ## Cache all the things!
 
@@ -95,7 +96,9 @@ some stage:
   after_script:
     - cache-tool collect composer:~/.composer
 ```
+
 The cache-tool allows to cache more than one directory, by simply adding more parameters to the command:
+
 ```bash
 $ cache-tool collect name1:/some/dir name2:~/dir-from-homedir
 ```
@@ -108,7 +111,7 @@ Just make sure the same directories are listed for extraction and collection.
 Some directories that you probably want to cache if you use the tools:
 
 | Tool     | Cache directory              |
-| ---------|------------------------------|
+| -------- | ---------------------------- |
 | Composer | ~/.composer                  |
 | NPM      | ~/.npm                       |
 | Yarn     | /usr/local/share/.cache/yarn |
