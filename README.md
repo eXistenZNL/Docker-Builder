@@ -158,17 +158,14 @@ build container:
 
 ## Automated builds
 
-The containers are automatically rebuilt and tested every week to make sure they are up-to-date.
+The containers are automatically rebuilt and tested every day to make sure they are up-to-date.
 
 ## Versions
 
-> Tags ending with a `-description` install packages from different repositories to keep up with the latest PHP
-> versions. These are probably short-lived and will be replaced with their default counterpart as soon as these PHP
-> versions make it into the default Alpine repositories. You can use them, just keep in mind you will have to switch
-> over to the default container at one point.
->
-> Codecasts containers are no longer provided, see [this issue](https://github.com/codecasts/php-alpine/issues/131) for
-> more information.
+> Tags ending with a `-edge` install packages from the edge repository to keep up with the latest PHP versions. These
+> are probably short-lived and will be replaced with their default counterpart as soon as these PHP versions make it
+> into the default Alpine repositories. You can use them, just keep in mind you will have to switch over to the default
+> container at one point.
 
 See the table below to see what versions are currently available:
 

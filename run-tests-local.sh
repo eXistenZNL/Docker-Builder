@@ -17,7 +17,6 @@ runtest () {
     make stop TAG=$1 > /dev/null 2>&1
 }
 
-runtest "8.1"
 runtest "8.3"
 runtest "8.4"
 runtest "8.5"
