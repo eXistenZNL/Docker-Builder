@@ -20,3 +20,4 @@ runtest () {
 runtest "8.3"
 runtest "8.4"
 runtest "8.5"
+runtest "8.6-edge"
