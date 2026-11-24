@@ -27,7 +27,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        tag: ["8.3", "8.4", "8.5"]
+        tag: ["8.3", "8.4", "8.5", "8.6-edge"]
     steps:
       - name: Checkout the codebase
         uses: actions/checkout@v7
